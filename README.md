@@ -1,1 +1,1 @@
-Webtechnológiák 1 beadandó feladat
+Webtech beadandó feladat
