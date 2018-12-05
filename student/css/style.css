@@ -1,0 +1,243 @@
+* {
+    font-family: Arial;
+    color: #333;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body.debil {
+    animation: debil 500ms infinite linear;
+}
+
+.main-container {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.background-holder {
+    height: calc(100vh);
+    background: url("../img/main-background.jpg") 50% 50%;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+.fixed-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+}
+
+.flexible-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.7), rgba(255,255,255,1));
+}
+
+.menu-item {
+    display: flex;
+    position: relative;
+    height: 100px;
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: linear-gradient(225deg, #4c5c79, #107b93);
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid rgba(255,255,255,0.3);
+    overflow: hidden;
+    transition-duration: 400ms;
+    user-select: none;
+    cursor: pointer;
+}
+
+.menu-item.danger {
+    background: #d20000;
+}
+
+.menu-item.opened {
+    transform: translateX(calc(50vw - 101px));
+}
+
+.menu-item:before {
+    content: "";
+    background: linear-gradient(rgba(255,255,255,0.0), rgba(255,255,255,0.3), rgba(255,255,255,0.0));
+    height: 250px;
+    width: 30px;
+    left: 0;
+    position: absolute;
+    transform: translateX(-100px) rotate(-30deg);
+    transition-duration: 500ms;
+}
+
+.menu-item:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.menu-item:hover:before {
+    transform: translateX(400px) rotate(-30deg);
+}
+
+.form-holder {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 300px);
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding-left: 300px;
+}
+
+.form-container {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px 32px;
+    width: 500px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    position: absolute;
+    top: 30px;
+    margin-bottom: 30px;
+}
+
+.form-title {
+    background: linear-gradient(225deg, #4c5c79, #107b93);
+    margin: -16px -32px 16px -32px;
+    padding: 16px 32px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.form-content {
+
+}
+
+.data-row {
+    margin: 0 -32px;
+    padding: 8px 32px;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    transition-duration: 400ms;
+}
+
+.data-row:nth-last-child(1) {
+    border-bottom: none;
+}
+
+.data-row:hover {
+    background: #ddd;
+}
+
+.data-row-name {
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.data-row-description {
+    font-size: 12px;
+    color: rgba(0,0,0,0.7);
+}
+
+.car-list-item {
+    margin: 5px 10px;
+    font-style: italic;
+}
+
+th {
+    font-size: 12px;
+    text-align: left;
+    padding: 2px 7px;
+}
+
+td {
+    font-size: 12px;
+    padding: 2px 7px;
+}
+
+.input-holder {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-holder label {
+    position: absolute;
+    z-index: 1;
+    background: #fff;
+    top: 0;
+    transform: translateY(-50%);
+    left: 10px;
+    font-size: 12px;
+    padding: 0 5px;
+    transition-duration: 300ms;
+    color: #999;
+}
+
+.controller {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 12px 15px 10px 15px;
+    display: block;
+    width: calc(100% - 32px);
+    font-size: 14px;
+    transition-duration: 300ms;
+}
+
+.controller:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.controller:focus ~ label {
+    color: #3498db;
+}
+
+.btn-submit {
+    border-radius: 4px;
+    border: none;
+    background: #ee7a36;
+    color: #fff;
+    padding: 16px 32px;
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #ce6223;
+}
+
+form {
+    margin-top: 40px;
+}
+
+@keyframes debil {
+    0% {
+        transform: rotate(0deg) scale(0.7);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.5);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(0.7);
+    }
+}

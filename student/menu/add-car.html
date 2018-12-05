@@ -1,0 +1,38 @@
+<!-- script load -->
+<script src="js/add-car.js"></script>
+
+<!-- build -->
+<div class="add-car">
+    <form id="addCarForm" action="/addCar">
+        <div class="input-holder">
+            <input type="text" class="controller" id="carName">
+            <label for="carName">Name</label>
+        </div>
+        <div class="input-holder">
+            <input type="number" class="controller" id="carConsumption">
+            <label for="carConsumption">Consumption</label>
+        </div>
+        <div class="input-holder">
+            <input type="text" class="controller" id="carColor">
+            <label for="carColor">Color</label>
+        </div>
+        <div class="input-holder">
+            <select id="carManufacturer" class="controller"></select>
+            <label for="carManufacturer">Manufacturer</label>
+        </div>
+        <div class="input-holder">
+            <input type="number" class="controller" id="carYear">
+            <label for="carYear">Year</label>
+        </div>
+        <div class="input-holder">
+            <input type="number" class="controller" id="carAvailable">
+            <label for="carAvailable">Available</label>
+        </div>
+        <div class="input-holder">
+            <input type="number" class="controller" id="carHorsepower">
+            <label for="carHorsepower">Horsepower</label>
+        </div>
+
+        <button class="btn-submit" id="saveCarBtn">Save</button>
+    </form>
+</div>
